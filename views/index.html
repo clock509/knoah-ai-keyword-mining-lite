@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Knoah AI keyword-mining lite</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <script src="/js/search.js"></script>
+</head>
+<body>
+    <h1>Knoah AI keyword-mining lite</h1>
+
+    <header class="header-wrap">
+        <input type="text" class="keyword-input" id="keyword-input" placeholder="채널에서 다루시려는 검색어를 입력하세요." />
+        <button class="keyword-button" onclick="showKeywordConfirmModal()">검색</button>
+    </header>
+
+    <main>
+        <div class="table-wrap">
+            <table class="searched-list-table" id="searchedListTable">
+                <colgroup>
+                    <col style="width: 24%;">
+                    <col style="width: 32%;">
+                    <col style="width: 8%;">
+                    <col style="width: 8%;">
+                    <col style="width: 8%;">
+                    <col style="width: 8%;">
+                </colgroup>
+                <thead id="searchedListTableHead" style="position: sticky; top: 50px;">
+                <tr>
+                    <th class="column-thumbnail">
+                        <p>썸네일</p>
+                    </th>
+                    <th class="column-video-title">
+                        <p>제목</p>
+                    </th>
+                    <th class="column-view-count">
+                        <p>조회수</p>
+                    </th>
+                    <th class="column-subscriber-count">
+                        <p>구독자수</p>
+                    </th>
+                    <th class="column-channel-title">
+                        <p>채널명</p>
+                    </th>
+                    <th class="column-published-date">
+                        게시일
+                    </th>
+                </tr>
+                </thead>
+                <tbody id="searchedListTableBody">
+                </tbody>
+            </table>
+            <div class="show-more-button-wrap">
+                <button id="showMoreButton" class="show-more-button" onclick="onClickShowMoreButton()">더 보기</button>
+            </div>
+        </div>
+    </main>
+    <div id="keywordConfirmModal" class="keyword-confirm-modal-wrap" >
+        <div id="keywordConfirmModalContent" class="keyword-confirm-modal-content">
+            <div id="keywordConfirmModalText" class="keyword-confirm-modal-text"></div>
+            <div id="keywordConfirmModalButtonWrapper" class="keyword-confirm-modal-button-wrapper">
+                <button id="confirmSearchButton" class="confirm-search-button" onclick="onClickConfirmSearchButton()">확인</button>
+                <button id="cancelSearchButton" class="cancel-search-button" onClick="onClickCancelSearchButton()">취소</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <img src="https://i.ytimg.com/vi/a8j0DkMOXxQ/mqdefault.jpg" alt="image"/>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>임요환형님을 아마고수와 붙여봤습니다ㄷㄷ 🔥레전드 장면 많음🔥</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>208141</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>413000</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>흑운장TV [BLACKTUBE]</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>23.01.09</div>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <img src="https://i.ytimg.com/vi/a8j0DkMOXxQ/mqdefault.jpg" alt="image"/>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>임요환형님을 아마고수와 붙여봤습니다ㄷㄷ 🔥레전드 장면 많음🔥</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>208141</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>413000</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>흑운장TV [BLACKTUBE]</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>23.01.09</div>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <img src="https://i.ytimg.com/vi/a8j0DkMOXxQ/mqdefault.jpg" alt="image"/>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>임요환형님을 아마고수와 붙여봤습니다ㄷㄷ 🔥레전드 장면 많음🔥</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>208141</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>413000</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>흑운장TV [BLACKTUBE]</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>23.01.09</div>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <img src="https://i.ytimg.com/vi/a8j0DkMOXxQ/mqdefault.jpg" alt="image"/>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>임요환형님을 아마고수와 붙여봤습니다ㄷㄷ 🔥레전드 장면 많음🔥</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>208141</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>413000</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>흑운장TV [BLACKTUBE]</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>23.01.09</div>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <img src="https://i.ytimg.com/vi/a8j0DkMOXxQ/mqdefault.jpg" alt="image"/>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>임요환형님을 아마고수와 붙여봤습니다ㄷㄷ 🔥레전드 장면 많음🔥</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>208141</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>413000</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>흑운장TV [BLACKTUBE]</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>23.01.09</div>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <img src="https://i.ytimg.com/vi/a8j0DkMOXxQ/mqdefault.jpg" alt="image"/>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>임요환형님을 아마고수와 붙여봤습니다ㄷㄷ 🔥레전드 장면 많음🔥</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>208141</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>413000</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>흑운장TV [BLACKTUBE]</div>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <div>23.01.09</div>-->
+<!--                    </td>-->
+<!--                </tr>-->

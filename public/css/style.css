@@ -1,0 +1,149 @@
+table {
+    background-color: antiquewhite;
+    display: table;
+    position: relative;
+    border-collapse: collapse;
+    border-color: white;
+}
+
+colgroup {
+    display: table-column-group;
+}
+
+col {
+    align-items: center;
+    border-color: black;
+}
+
+thead {
+    vertical-align: middle;
+    align-content: center;
+    display: table-header-group;
+    border-spacing: 0;
+}
+
+th {
+    background-color: lightgray;
+    font-size: 18px;
+}
+
+tr {
+    /*border-color: blue;*/
+    border: 1px solid lightgray;
+    margin: 40% 40%;
+    align-items: center;
+    justify-content: center;
+}
+
+td {
+    padding: 8px 8px 1px 1px;
+    text-align: center;
+    justify-content: stretch;
+}
+
+.header-wrap {
+    width: 100%;
+    height: 50px;
+    top: 0;
+    display: flex;
+    position: sticky;
+    vertical-align: center;
+    align-items: center;
+    z-index: 1;
+    background-color: white;
+}
+
+.keyword-input {
+    width: 50%;
+    height: 60%;
+    border-radius: 50rem;
+    margin-left: 30px;
+    padding-left: 30px;
+    background: #f5f5f7;
+}
+
+.keyword-button {
+    margin-left: 15px;
+    height: 75%;
+}
+
+.table-wrap {
+    display: grid;
+    position: relative;
+    top: 50px;
+    padding-top: 50px;
+    align-items: center;
+}
+
+.show-more-button-wrap {
+    padding: 20px;
+    text-align: center;
+}
+
+.show-more-button {
+    background-color: black;
+    color: white;
+    border-radius: 25rem;
+    width: 80px;
+    height: 45px;
+    z-index: 3;
+    visibility: hidden;
+}
+
+.keyword-confirm-modal-wrap {
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
+
+
+.keyword-confirm-modal-button-wrapper {
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+}
+
+.keyword-confirm-modal-content {
+    width: 40%;
+    height: 30%;
+    font-weight: bolder;
+    flex-direction: column;
+
+    background-color: white;
+    border: 1px solid rgba(20,20,20,.2);
+    border-radius: 0.5rem;
+    outline: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-search-button {
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    margin-right: 20px;
+    border-radius: 1rem;
+    width: 100px;
+    height: 40px;
+}
+
+.cancel-search-button {
+    background-color: white;
+    color: black;
+    font-weight: bolder;
+    margin-left: 20px;
+    border-radius: 1rem;
+    width: 100px;
+    height: 40px;
+}
