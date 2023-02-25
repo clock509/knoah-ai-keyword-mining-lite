@@ -8,9 +8,9 @@
 $ node app.js
  ```
 
-Live debugging을 하려면 nodemon을 설치프로젝트 최상단에서 app.js를 실행합니다.
+Live debugging을 하려면 nodemon을 설치하고, 프로젝트 최상단에서 app.js를 실행합니다.
 ```
-$ node app.js
+$ nodemon app.js
  ```
 
 
