@@ -23,10 +23,15 @@ localhost:3000
 ```
 
 ### 개발환경
+#### backend
 - node.js v14.17.4
 - npm v6.14.14
 - nodemon v2.0.15
 - nvm v0.33.1
+#### frontend
+- html
+- css
+- javascript
 
 
 ## 2. 프로젝트 구성
